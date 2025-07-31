@@ -192,3 +192,15 @@ def resultados_diarios(portfolio, caixa):
     print(f"Saldo em Caixa: R${caixa:.2f}")
     
     print("\nGemini, aqui está a sua atualização. Pode fazer as alterações que julgar necessárias.")
+
+# --- ORDEM DE EXECUÇÃO DIÁRIA ---
+
+# 1. Adicionar aqui quaisquer ordens manuais decididas pelo Gemini
+# Exemplo: caixa, gemini_portfolio = logar_venda_manual(13.00, 25, "MGLU3", caixa, gemini_portfolio)
+# Exemplo: caixa, gemini_portfolio = logar_compra_manual(18.00, 10, "ITUB4", caixa, 16.50, gemini_portfolio)
+
+# 2. Processar o portefólio (atualiza preços e executa stop-loss)
+gemini_portfolio = processar_portfolio(gemini_portfolio, caixa)
+
+# 3. Gerar o relatório diário para a análise do Gemini
+resultados_diarios(gemini_portfolio, caixa)
